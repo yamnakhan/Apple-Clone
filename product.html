@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        text-decoration: none;
+      }
+
+      html {
+        font-size: 62.5%;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-size: 1.6rem;
+      }
+      #header {
+        
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 5vh;
+        background-color: #222121;
+        color: rgb(235, 226, 226);
+        gap: 2vw;
+        font-family: sans-serif;
+        font-size: 1.4vh;
+      }
+      nav a {
+        color: rgb(226, 216, 216);
+        text-decoration: none;
+      }
+      i {
+        font-size: 1vw;
+      }
+      .responsive-nav {
+        display: none;
+        top: -100%;
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: #161616;
+        z-index: 3;
+      }
+      .pro{
+         text-align: center;
+         font-size: 3rem;
+         padding-top: 3rem;
+         font-family:sans-serif;
+      
+      }
+
+      .container {
+        max-width: 144rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+      }
+
+      .products {
+        padding: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 2rem;
+      }
+
+      .product {
+        background: #f9f8fc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .product img {
+        width: 100%;
+      }
+
+      .product-content {
+        padding: 1rem 2rem;
+      }
+
+      .product .product-title {
+        font-size: 2rem;
+      }
+
+      .product-description {
+        text-align: justify;
+      }
+
+      .product-title,
+      .product-price-container,
+      .product-description,
+      .product-category {
+        padding: 0.5rem 0;
+      }
+
+      .product-price-container {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .add-to-cart {
+        background: rgb(16, 8, 69);
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        color: white;
+        border-radius: 1rem;
+      }
+
+      .add-to-cart ion-icon {
+        font-size: 3rem;
+      }
+      .mainfooter {
+        width: 100%;
+        /* height: 1000vh; */
+        background-color: #f2f2f2;
+        margin-top: 5rem;
+        font-family: sans-serif;
+      
+      }
+      .foot2 {
+       
+        color: #272727;
+        line-height: 21px;
+        text-align: center;
+      }
+      .foot-1 a {
+        line-height: 40px;
+        padding-left: 60px;
+        text-decoration: none;
+      }
+
+      .foottt {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4.5rem;
+        margin-top: 4rem;
+        .pic2 {
+          width: 3rem;
+          height: 3.5rem;
+          margin-left: 8rem;
+          margin-bottom: 1rem;
+        }
+      }
+      .footerpara {
+        font-size: 0.9rem;
+        color: #aaa5a5;
+        text-align: center;
+        line-height: 2.2rem;
+      }
+      .tophr {
+        margin-top: 2.2rem;
+      }
+
+      .cs {
+        position: relative;
+        left: 12.2rem;
+      }
+      .fapple {
+        padding-left: 10.5rem;
+        font-size: 0.8rem;
+      }
+      .footer-col {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4.5rem;
+        list-style: none;
+        a {
+          color: #6d6c6c;
+          text-decoration: none;
+          font-size: 0.9rem;
+          line-height: 1.5rem;
+        }
+      }
+      .lastfoot-1 {
+        text-align: center;
+        font-size: 0.9rem;
+        padding-top: 5px;
+      }
+
+      .footer-col2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        font-size: 0.9rem;
+        color: #6d6c6c;
+        line-height: 2rem;
+      }
+      @media (max-width: 500px) {
+        nav {
+          gap: 5vw;
+        }
+        nav a {
+          display: none;
+        }
+        nav i {
+          font-size: 4.2vw;
+        }
+        .ri-apple-fill {
+          margin-right: 60vw;
+        }
+        #menu {
+          display: initial;
+        }
+        .responsive-nav {
+          display: flex;
+          flex-direction: column;
+          gap: 3vh;
+          padding: 8vw 10vw;
+        }
+        .responsive-nav a {
+          font-family: sans-serif;
+          font-size: 5vw;
+          text-decoration: none;
+          color: #fff;
+        }
+        #close {
+          font-size: 4vw;
+          color: #fff;
+          position: absolute;
+          top: 3%;
+          right: 3%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <nav>
+        <a href="index.html" target="_self"><i class="ri-apple-fill"></i></a>
+        <a href="index.html" target="_parent">Store </a>
+        <a href="#">Mac</a>
+        <a href="#">iPad</a>
+        <a href="#">iPhone</a>
+        <a href="#">Watch</a>
+        <a href="#">Vision</a>
+        <a href="#">Airpod</a>
+        <a href="form.html" target="_blank">Login Now</a>
+        <a href="product.html" target="_self">Product</a>
+        <a href="Accessories.html" target="_blank">Accessories</a>
+        <a href="support.html" target="_blank">Support</a>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <i class="ri-shopping-bag-line"></i>
+        <i id="menu" class="fa fa-bars"></i>
+      </nav>
+      <!-----------RESPONSIVE NAV----------->
+      <div class="responsive-nav">
+        <i id="close" class="fa fa-times" aria-hidden="true"></i>
+        <a href="index.html" target="_parent"><b>Store</b></a>
+        <a href="#"><b>Mac</b></a>
+        <a href="#"><b>iPad</b></a>
+        <a href="#"><b>iPhone</b></a>
+        <a href="#"><b>Watch</b></a>
+        <a href="#"><b>Vision</b></a>
+        <a href="#"><b>Airpod</b></a>
+        <a href="form.html" target="_blank"><b>Login Now</b></a>
+        <a href="product.html" target="_self"><b>Product</b></a>
+        <a href="Accessories.html" target="_blank"><b>Accessories</b></a>
+        <a href="support.html" target="_blank"><b>Support</b></a>
+      </div>
+    </div>  
+    <div class="pro"><b>Product</b></div>
+    <div class="container">
+      <div class="products"></div>
+    </div>
+    <div class="mainfooter">
+      <div class="foottt">
+        <div class="foot-1">
+          <img class="pic2" src="assets/f1.png" alt="" />
+          <h3 class="parag">Fast delivery or pickup</h3>
+          <p class="foot2">
+            Enjoy two-hour delivery from an <br />
+            Apple Store, free delivery, or <br />
+            easy pickup.
+          </p>
+          <a href="#">Learn more ></a>
+        </div>
+
+        <div class="foot-1">
+          <img class="pic2" src="assets/footer2.png" alt="" />
+          <h3 class="parag">Free and easy returns</h3>
+          <p class="foot2">
+            Complete your return online or <br />
+            take it to an Apple Store.
+          </p>
+          <a class="anchore" href="#">Learn more ></a>
+        </div>
+
+        <div class="foot-1">
+          <img class="pic2" src="assets/footer3.png" alt="" />
+          <h3 class="parag">Buy with Apple Card.</h3>
+          <p class="foot2">
+            Get 3% Daily Cash back when <br />
+            you shop at Apple <br />
+            with Apple Card.
+          </p>
+          <a href="#">Learn more ></a>
+        </div>
+      </div>
+
+      <br />
+      <hr class="tophr" />
+      <p class="footerpara">
+        We approximate your location from your internet IP address by
+        matching it to a geographic region or from the location entered
+        during your previous visit to Apple.
+      </p>
+      <hr class="bottomhr" />
+      <!-- <i class="ri-apple-fill cs"></i>
+  <span class="fapple">> All Accessories</span> -->
+
+      <div class="footer-col">
+        <div class="col-1">
+          <!-- <ul> -->
+          <li>
+            <h5><a href="">Shop and Learn</a></h5>
+          </li>
+          <li><a href="">Store</a></li>
+          <li><a href="">Mac</a></li>
+          <li><a href="">Ipad</a></li>
+          <li><a href="">Iphone</a></li>
+          <li><a href="">watch</a></li>
+          <li><a href="">Vision</a></li>
+          <li><a href="">Airpods</a></li>
+          <li><a href="">tv & Home</a></li>
+          <li><a href="">AirTag</a></li>
+          <li><a href="">Accessories</a></li>
+          <li><a href="">Gift Cards</a></li>
+          <br />
+          <li>
+            <h5><a href="">Apple wallet</a></h5>
+          </li>
+          <li><a href="">Wallet</a></li>
+          <li><a href="">Apple Card</a></li>
+          <li><a href="">Apple Pay</a></li>
+          <li><a href="">Apple Cash</a></li>
+          <!-- </ul> -->
+        </div>
+        <div class="col-1">
+          <!-- <ul> -->
+          <li>
+            <h5><a href="">Account</a></h5>
+          </li>
+          <li><a href="">Manage your Apple ID</a></li>
+          <li><a href="">Apple Store Account</a></li>
+          <li><a href="">Icloud.com</a></li>
+          <br />
+          <li>
+            <h5><a href="">Entertainment</a></h5>
+          </li>
+          <li><a href="">Apple one</a></li>
+          <li><a href="">Apple Tv+</a></li>
+          <li><a href="">Apple Arcade</a></li>
+          <li><a href="">Apple fitness+</a></li>
+          <li><a href="">Apple News+</a></li>
+          <li><a href="">APPLe Podcast</a></li>
+          <li><a href="">Apple Books</a></li>
+          <li><a href="">App Store</a></li>
+
+          <!-- </ul> -->
+        </div>
+        <div class="col-1">
+          <!-- <ul> -->
+          <li>
+            <h5><a href="">Apple Store</a></h5>
+          </li>
+          <li><a href="">Find a store</a></li>
+          <li><a href="">Genius Bar</a></li>
+          <li><a href="">Today at Apple</a></li>
+          <li><a href="">Apple Camp</a></li>
+          <li><a href="">Apple Store App</a></li>
+          <li><a href="">Refurisable</a></li>
+          <li><a href="">Apple Trade In</a></li>
+          <li><a href="">Financing</a></li>
+          <li><a href="">Carrier deals At Apple</a></li>
+          <li><a href="">Order Status</a></li>
+          <li><a href="">Shopping Help</a></li>
+
+          <!-- </ul> -->
+        </div>
+        <div class="col-1">
+          <li>
+            <h5><a href="">For Business</a></h5>
+          </li>
+          <li><a href="">Apple & Business</a></li>
+          <li><a href="">Shop for Business</a></li>
+          <li>
+            <h5><a href="">For Education</a></h5>
+          </li>
+          <br />
+          <li><a href="">Apple & Education</a></li>
+          <li><a href="">Education for k-12</a></li>
+          <li><a href="">Shop for College</a></li>
+          <li>
+            <h5><a href="">For Healthcare</a></h5>
+          </li>
+          <li><a href="">Apple in Healthcare</a></li>
+          <li><a href="">Health on Apple Watch</a></li>
+          <li><a href="">Health Records on Iphone</a></li>
+          <li>
+            <h5><a href="">For Government</a></h5>
+          </li>
+          <li><a href="">Shop for Government</a></li>
+          <li><a href="">Shop for Veterans and Military</a></li>
+        </div>
+        <div class="col-1">
+          <li>
+            <h5><a href="">Apple Values</a></h5>
+          </li>
+          <li><a href="">Accessability</a></li>
+          <li><a href="">Education</a></li>
+          <li><a href="">Environment</a></li>
+          <li><a href="">Inclusion and diversity</a></li>
+          <li><a href="">privacy</a></li>
+          <li><a href="">Racial Equity and justice</a></li>
+          <li><a href="">Supplier Responsibility</a></li>
+          <li>
+            <h5><a href="">About Apple</a></h5>
+          </li>
+          <li><a href="">Newsroom</a></li>
+          <li><a href="">Apple leadership</a></li>
+          <li><a href="">Career Opertunities</a></li>
+          <li><a href="">Investors</a></li>
+          <li><a href="">Ethics & Complain</a></li>
+          <li><a href="">Events</a></li>
+          <li><a href="">Contact Apple</a></li>
+        </div>
+      </div>
+      <div class="lastfoot">
+        <p class="lastfoot-1">
+          More ways to shop: <a href="">Find an Apple Store</a> or
+          <a href=""> other retailer </a> near you. Or call 1‑800‑MY‑APPLE.
+        </p>
+      </div>
+      <hr />
+      <div class="footer-col2">
+        <div class="subfooter2">
+          Copyright © 2024 Apple Inc. All rights reserved.
+        </div>
+        <div class="subfooter2">
+          privacy policy |term of uses |sales and refunds |legal |site map
+        </div>
+        <div class="subfooter2">United States</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let bar = document.querySelector("#menu");
+  let clo = document.querySelector("#close");
+  let nav = document.querySelector(".responsive-nav");
+
+  bar.addEventListener("click", function () {
+    nav.style.top = "0%";
+  });
+  clo.addEventListener("click", function () {
+    nav.style.top = "-100%";
+  });
+</script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let products = document.querySelector(".products");
+        async function fetchProducts(url) {
+          try {
+            let data = await fetch(`https://api.escuelajs.co/api/v1/products`);
+            let response = await data.json();
+            response.length = (4)
+            for (let i = 0; i < response.length; i++) {
+              let description = response[i].description;
+              let title = response[i].title;
+              
+              products.innerHTML += `
+           <div class="product">                
+               <img src="${response[i].images[1]}" alt=""
+               class="product-img">
+               <div class="product-content">
+               <h2 class="product-title">${
+                 title.length > 18
+                   ? title.substring(0, 18).concat(" ...")
+                   : title
+               }</h2>
+               <h4 class="product-category">${response[i].category.name}</h4>
+               <p class="product-description">${
+                 description.length > 80
+                   ? description.substring(0, 80).concat(" ...more")
+                   : description
+               }</p>
+               <div class="product-price-container">
+                   <h3 class="product-price">$${response[i].price}</h3>
+                   <a href="#!" data-productId="${
+                     response[i].id
+                   }" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon></a>
+               </div>
+               </div>
+              
+           </div>
+           `;
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+        fetchProducts("https://api.escuelajs.co/api/v1/products");
+      });
+    </script>
+  </body>
+</html>

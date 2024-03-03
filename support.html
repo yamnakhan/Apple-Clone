@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Bootstrap Navbar with Space Between Options</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/apple.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+    margin: 0%;
+    padding: 0%;
+    border-color: #F8F9FA;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-dark {
+    background-color: #F8F9FA !important;
+    height: 56px;
+}
+
+.navbar {
+    height: 56px;
+    margin-left: 8%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: black;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 16px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+.apple-support {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.apple-support h2 {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-top: 50px;
+    font-size: 64px;
+    line-height: 1.0625;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+}
+
+.support {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.iphone {
+    text-align: center;
+    margin: 30px;
+}
+
+.iphone img {
+    max-width: 70%;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #F5F5F7;
+}
+
+.box {
+    display: flex;
+    margin-top: 68px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.box-container img {
+    max-width: 60px;
+    max-height: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.text p {
+    color: #0066cc;
+    letter-spacing: inherit;
+}
+
+.text p:hover {
+    text-decoration: underline;
+}
+
+
+/* Bootstrap 5 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    margin-top: 10px
+}
+
+.search_section h2 {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-top: 68px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0em;
+}
+
+.form-group {
+    margin-top: 58px;
+}
+
+input.form-control {
+    height: 58px;
+    border-radius: 10px;
+    margin-bottom: 65px;
+}
+
+.ytcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ytbox {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.ytbox h2 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ytbox p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bgcolor {
+    background-color: #F5F5F7;
+}
+
+.ytbox a {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.fullcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ytbox a:hover {
+    text-decoration: underline;
+}
+
+.ytbox img {
+    max-width: 100%;
+    background-size: cover;
+    height: auto;
+}
+
+.fullbox {
+    width: calc(75% - 10px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.fullbox:nth-child(odd) {
+    margin-right: 10px;
+}
+
+.fullbox:nth-child(even) {
+    margin-left: 10px;
+}
+
+.fullbox h2 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.fullbox p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.fullbox a {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: blue;
+    text-align: center;
+}
+
+.fullbox a:first-child {
+    background-color: black;
+    color: white;
+}
+
+.fullbox img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.second-column {
+    width: calc(25% - 10px);
+}
+
+.twobox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box1 {
+    width: 68%;
+    padding: 20px;
+    background-color: white;
+}
+
+.box2 {
+    width: 30%;
+    padding: 20px;
+    background-color: white;
+}
+
+.program h2 {
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 1.16667;
+    letter-spacing: 0.009em;
+}
+
+.program h2:hover {
+    text-decoration: underline;
+}
+
+.page-footer {
+    background-color: #f5f5f7 !important;
+}
+
+.twobox h2 {
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 600;
+    letter-spacing: 0.009em;
+}
+
+.twobox p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.twobox a {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #0066cc;
+}
+
+.twobox p span {
+    color: #0066cc;
+}
+
+.program {
+    margin-top: 58px;
+}
+
+.program h1 {
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 600;
+    letter-spacing: 0.009em;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html" target="_parent">
+                    <img src="img2/logo.png" alt="Logo" style="height: 30px;">
+                </a>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" target="_parent">Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mac</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ipad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">iphone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">watch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">vision</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Accessories.html" target="_blank">Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form.html" target="_blank">Login Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html" target="_blank">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="support.html" target="_self">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img2/search-icon.webp" alt="Search Icon" style="height: 25px;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img src="img2/cart.png" alt="Cart Icon" style="height: 25px;">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <img src="img2/Banner.jpg" alt="Header Banner">
+    </div>
+
+    <!-- Apple Support Section -->
+    <div class="apple-support">
+        <h2>Apple Support</h2>
+
+        <div class="support">
+            <div class="iphone">
+                <img src="img2/image-grid-iphone_2x.png" alt="">
+                <br>
+                <a href="#">iphone</a>
+            </div>
+            <div class="iphone"><img src="img2/image-grid-mac_2x.mac.png" alt="">
+                <br>
+                <a href="#">Mac</a>
+            </div>
+            <div class="iphone"><img src="img2/image-grid-ipad_2x.png" alt="">
+                <br>
+                <a href="#">ipad</a>
+            </div>
+            <div class="iphone"><img src="img2/image-grid-watch-_2x (1).png" alt="">
+                <br>
+                <a href="#">Watch</a>
+            </div>
+            <div class="iphone">
+                <img src="img2/image-grid-apple-vision-pro_2x.png" alt="">
+                <br>
+                <a href="#">vision</a>
+            </div>
+            <div class="iphone">
+                <img src="img2/image-grid-tv_2x.png" alt="">
+                <br>
+                <a href="#">Tv</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="container box">
+        <div class="box-container">
+            <img src="img2/images (1).password.png" alt="Your Image">
+            <div class="text">
+                <p>Forgot Apple ID password</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <img src="img2/images (1).hamer.png" alt="Your Image">
+            <div class="text">
+                <p>Apple Repair</p>
+            </div>
+        </div>
+        <div class="box-container">
+            <img src="img2/tile-topic-billing_2x.png" alt="Your Image">
+            <div class="text">
+                <p>Billing and subscriptions</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Search Section -->
+    <div class="container">
+        <div class="search_section">
+            <h2>Search for more topics</h2>
+            <div class="form-group has-search">
+                <span class="fa fa-search form-control-feedback"></span>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Apple Vision Pro on YouTube Section -->
+    <div class="bgcolor">
+        <div class="container">
+            <div class="ytcontainer">
+                <div class="ytbox">
+                    <h2>Apple Vision Pro on YouTube</h2>
+                    <p>Learn about Apple Vision Pro and all your Apple devices and services on our official YouTube channel.</p>
+                    <a href="#">Visit Apple Support on YouTube</a>
+                    <img src="img2/device.jpg" alt="Sample Image">
+                </div>
+                <div class="ytbox">
+                    <h2>Join free sessions at your Apple Store</h2>
+                    <p>Learn about the latest features and how to go further with your Apple devices.</p>
+                    <a href="#">Sign up</a>
+                    <img src="img2/class.png" alt="Sample Image">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="fullcontainer">
+            <div class="fullbox">
+                <h2>Get Support</h2>
+                <p>Give us a few details and we’ll offer the best solution. Connect by phone, chat, email, and more.
+
+                </p>
+                <a href="#">Sample Link</a>
+                <img src="img2/55.png" alt="Sample Image">
+            </div>
+            <div class="fullbox second-column">
+                <h2>Box 2</h2>
+                <p>This is some sample text in box 2.</p>
+                <a href="#">Sample Link</a>
+                <a href="#">Sample Link</a>
+                <img src="img2/556.png" alt="Sample Image">
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="ytcontainer">
+                <div class="ytbox">
+                    <h2>My Support</h2>
+                    <p>Get warranty information, check your coverage status, or look up an existing repair. </p>
+                    <a href="#">Sign in with your Apple ID ></a>
+                </div>
+                <div class="ytbox">
+                    <h2>AppleCare+</h2>
+                    <p>Get unlimited repairs for accidental damage protection, 24/7 priority access to Apple experts, and more.
+
+                    </p>
+                    <a href="#">Learn more</a>
+                    <img src="img2/123.png" alt="Sample Image">
+                </div>
+                <div class="ytbox">
+                    <h2>Apple Trade In</h2>
+                    <p>Turn an eligible device into credit towards a new one, or recycle it for free. </p>
+                    <a href="#">Learn more</a>
+                    <img src="img2/1234.png" alt="Sample Image">
+                </div>
+                <div class="ytbox">
+                    <h2>Safe and reliable repairs</h2>
+                    <p>At Apple, every product we make is built to last. We design durable, easy-to-use devices with innovative features that customers depend on, all while protecting their privacy and data. Customers should have access to safe, reliable,
+                        and secure repairs with genuine Apple parts if they need them.</p>
+                    <a href="#">Learn more about Apple’s approach to expanding access to safe and reliable repairs. View (PDF)</a>
+                </div>
+                <div class="twobox">
+                    <div class="box1">
+                        <h2>Beware of counterfeit part </h2>
+                        <p>Some counterfeit and third party power adapters and batteries may not be designed properly and could result in safety issues. To ensure you receive a genuine Apple battery during a battery replacement, we recommend visiting an
+                            <span>Apple Store</span> or <span> Apple Authorized Service Provider</span>. If you need a replacement adapter to charge your Apple device, we recommend getting an Apple power adapter. <br> <br> Also non-genuine replacement
+                            displays may have compromised visual quality and may fail to work correctly. Apple-certified screen repairs are performed by trusted experts who use genuine Apple parts.</p>
+                    </div>
+                    <div class="box2">
+                        <img src="img2/gift.png" alt="Sample Image">
+                        <h2>Be aware of gift card scams </h2>
+                        <p>Be aware of scams involving Apple Gift Cards, App Store & iTunes Gift Cards, and Apple Store Gift Cards.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="program">
+        <div class="container">
+            <h1>Apple Service Programs</h1>
+            <h2>Apple Watch Series 6 Service Program for Blank Screen Issue</h2>
+            <h2>iPhone 12 and iPhone 12 Pro Service Program for No Sound Issues</h2>
+            <h2>15-inch MacBook Pro Battery Recall Program</h2>
+            <h2>Apple Three-Prong AC Wall Plug Adapter Recall Program</h2>
+            <h2>See all programs</h2>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Product Support</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Very long link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Very long link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Very long link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Very long link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Service and Repair</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Resources</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Connect
+                    </h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2024 Copyright:Bilawal</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
